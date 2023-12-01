@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "MyView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<WebApplicationMVC.Models.DataResponseModels>
+
+@Html.ActionLink("Bấm vào đây", "About", new { id = "abc1" })
+
+<h2>MyView MR QUAN</h2>
+<p>Cach 1: @ViewBag.Data</p>
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <p>@item.Messenger</p>
+    }
+}
+
