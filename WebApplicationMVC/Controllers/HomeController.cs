@@ -13,7 +13,8 @@ namespace WebApplicationMVC.Controllers
         //{
         //    return View();
         //}
-        public ActionResult Index1(string id)
+
+        public ActionResult Index1(int? id)
         {
             var model = new List<DataResponseModels>();
             var model2 = new List<DataResponseModels>();
@@ -42,7 +43,7 @@ namespace WebApplicationMVC.Controllers
             return View("~/Views/Home/MyView.cshtml", model);
         }
 
-
+       
         public ActionResult About(string id)
         {
             ViewBag.Message = "Your application description page.";

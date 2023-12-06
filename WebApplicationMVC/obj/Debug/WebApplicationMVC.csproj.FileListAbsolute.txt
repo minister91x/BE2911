@@ -77,3 +77,5 @@ C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\obj\Debug\WebApplic
 C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\obj\Debug\WebApplicationMVC.csproj.CopyComplete
 C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\obj\Debug\WebApplicationMVC.dll
 C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\obj\Debug\WebApplicationMVC.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\bin\BeAspNet.DataaAccress.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\WebApplicationMVC\bin\BeAspNet.DataaAccress.pdb

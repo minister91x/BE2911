@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\bin\Debug\BeAspNet.DataaAccress.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\bin\Debug\BeAspNet.DataaAccress.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\obj\Debug\BeAspNet.DataaAccress.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\obj\Debug\BeAspNet.DataaAccress.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\obj\Debug\BeAspNet.DataaAccress.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BeAspNet.DataaAccress\obj\Debug\BeAspNet.DataaAccress.pdb
