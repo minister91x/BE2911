@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplicationMVC.Filter;
 using WebApplicationMVC.Models;
 
 namespace WebApplicationMVC.Controllers
@@ -43,7 +44,7 @@ namespace WebApplicationMVC.Controllers
             return View("~/Views/Home/MyView.cshtml", model);
         }
 
-       
+        [OutputCache(Duration = 100)]
         public ActionResult About(string id)
         {
             ViewBag.Message = "Your application description page.";
@@ -55,16 +56,61 @@ namespace WebApplicationMVC.Controllers
             }
             else
             {
-                return View();
+                return View(); // Views -> Home -> About.cshtml
 
             }
         }
 
+        [MyCustomFilter]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult PartialViewDemo(RequestData data)
+        {
+            ViewBag.Name = data.Name;
+            return PartialView();
+        }
+
+        public JsonResult Login(UserLoginRequestData requestData)
+        {
+            var returnData = new ResponseData();
+            try
+            {
+                if (requestData == null)
+                {
+                    returnData.code = -1;
+                    returnData.mes = "dữ liệu không hợp lệ";
+                    return Json(returnData, JsonRequestBehavior.AllowGet);
+                }
+
+                if (!string.IsNullOrEmpty(requestData.UserName)
+                    && !string.IsNullOrEmpty(requestData.Password))
+                {
+                    returnData.code = -2;
+                    returnData.mes = "dữ liệu không hợp lệ";
+                    return Json(returnData, JsonRequestBehavior.AllowGet);
+                }
+
+                if (requestData.UserName == "quannt" && requestData.Password == "123")
+                {
+                    returnData.code = 1;
+                    returnData.mes = "Đăng nhập thành công";
+                    return Json(returnData, JsonRequestBehavior.AllowGet);
+                }
+
+                returnData.code = -100;
+                returnData.mes = "Đăng nhập fail";
+                return Json(returnData, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception exx)
+            {
+
+                throw;
+            }
         }
     }
 }

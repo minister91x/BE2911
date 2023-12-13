@@ -9,11 +9,90 @@
 
 <h2>MyView MR QUAN</h2>
 <p>Cach 1: @ViewBag.Data</p>
-@if (Model != null && Model.Count > 0)
+@*@if (Model != null && Model.Count > 0)
 {
     foreach (var item in Model)
     {
         <p>@item.Messenger</p>
     }
-}
+}*@
+
+@Html.Action("PartialViewDemo", "Home")
+
+<div id="DemoPartialView" style="background-color:greenyellow"></div>
+
+
+
+    <div class="form-group">
+        <label for="email">UserName:</label>
+        <input type="email" class="form-control" id="txtUserName">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="text" class="form-control" id="txtPassword">
+    </div>
+    <button type="button" id="btnSave" class="btn btn-success">Đăng nhập</button>
+
+<script>
+    $(document).ready(function () {
+        debugger;
+        LoadPartialView();
+
+
+        $("#btnSave").click(function () {
+            Login();
+        });
+
+    });
+
+    function LoadPartialView() {
+
+        var data_input = {
+            Name: 'Quan'
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/Home/PartialViewDemo",
+            data: JSON.stringify(data_input),
+            dataType: 'html',
+            cache: false,
+            success: function (result) {
+                $("#DemoPartialView").html(result);
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+            }
+        });
+
+    }
+    function Login() {
+
+        var data_input = {
+            UserName: $("#txtUserName").val(),
+            Password: $("#txtPassword").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/Home/Login",
+            data: JSON.stringify(data_input),
+            dataType: 'json',
+            cache: false,
+            success: function (result) {
+                alert(result.mes);
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+            }
+        });
+
+    }
+</script>
 

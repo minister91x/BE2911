@@ -122,11 +122,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filter\MyCustomFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DataResponseModels.cs" />
     <Compile Include="Models\IndexRequestData.cs" />
+    <Compile Include="Models\RequestData.cs" />
+    <Compile Include="Models\ResponseData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +169,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\MyView.cshtml" />
+    <Content Include="Views\Home\PartialViewDemo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
