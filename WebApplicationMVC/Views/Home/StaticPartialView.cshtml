@@ -1,0 +1,15 @@
+﻿@model List<WebApplicationMVC.Models.DataResponseModels>
+<p>
+    Chiều nay, 17-12, Trung tâm Dự báo khí tượng thuỷ văn quốc gia cho biết gần biển Đông có một cơn bão đang hoạt động với tên quốc tế Jelawat.
+
+    Lúc 13 giờ chiều nay, vị trí tâm bão ở vào khoảng 7,8 độ Vĩ Bắc; 128,6 độ Kinh Đông, trên vùng biển phía Đông Nam miền Nam Philippines. Sức gió mạnh nhất vùng gần tâm bão mạnh cấp 8 (62-74km/h), giật cấp 10.
+
+    Cơ quan khí tượng quốc gia dự báo cơn bão này nhiều khả năng sẽ đi vào biển Đông vào trưa ngày 19-12. Tuy nhiên, quá trình di chuyển vào biển Đông, bão sẽ suy yếu thành áp thấp nhiệt đới.
+</p>
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <p>@item.Messenger</p>
+    }
+}

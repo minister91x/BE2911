@@ -9,6 +9,9 @@ namespace BeAspNet.DataaAccress.DataAccessObject
 {
     public interface IUserDAO
     {
-         List<User> GetUsers();
+        List<User> GetUsers();
+        User GetById(int id);
+
+        int UserUpdate(User user);
     }
 }

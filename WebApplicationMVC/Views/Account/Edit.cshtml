@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "AccountEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BeAspNet.DataaAccress.DataObject.User
+<h2>AccountEdit</h2>
+
+@*<div class="form-group">
+        <label for="email">UserName:</label>
+        <input type="email" class="form-control" id="txtId" value="@Model.ID" disabled>
+    </div>*@
+
+<div class="form-group">
+    <label for="email">UserName:</label>
+    <input type="hidden" id="txtId" value="@Model.ID" />
+    <input type="email" class="form-control" id="txtUserName" value="@Model.UserName">
+</div>
+<div class="form-group">
+    <label for="pwd">FullName:</label>
+    <input type="text" class="form-control" id="txtFullName" value="@Model.FUllName">
+</div>
+
+<div class="form-group">
+    <label for="pwd">Address:</label>
+    <input type="text" class="form-control" id="txtAdress" value="@Model.UserAddress">
+</div>
+<button type="button" id="btnUpdate" class="btn btn-success">Cập nhật</button>
+<script>
+    $(document).ready(function () {
+
+        $("#btnUpdate").click(function () {
+            Update();
+        });
+
+    });
+
+
+    function Update() {
+
+        var data_input = {
+            ID: $("#txtId").val(),
+            UserName: $("#txtUserName").val(),
+            FUllName: $("#txtFullName").val(),
+            UserAddress: $("#txtAdress").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/Account/AccountUpdate",
+            data: JSON.stringify(data_input),
+            dataType: 'json',
+            cache: false,
+            success: function (result) {
+                alert(result.mes);
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+            }
+        });
+
+    }
+</script>

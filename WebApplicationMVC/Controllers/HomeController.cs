@@ -74,7 +74,11 @@ namespace WebApplicationMVC.Controllers
             ViewBag.Name = data.Name;
             return PartialView();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestData"></param>
+        /// <returns></returns>
         public JsonResult Login(UserLoginRequestData requestData)
         {
             var returnData = new ResponseData();

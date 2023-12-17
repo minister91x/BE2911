@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filter\MyCustomFilterAttribute.cs" />
@@ -170,6 +171,10 @@
     <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\MyView.cshtml" />
     <Content Include="Views\Home\PartialViewDemo.cshtml" />
+    <Content Include="Views\Home\StaticPartialView.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\ListUserPartialView.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

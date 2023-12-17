@@ -1,51 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "MyView";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    var a = 1;
-
 }
-@model List<WebApplicationMVC.Models.DataResponseModels>
-
-@Html.ActionLink("Bấm vào đây", "About", new { id = "abc1" })
-
-<h2>MyView MR QUAN</h2>
-<p>Cach 1: @ViewBag.Data</p>
-@*@if (Model != null && Model.Count > 0)
-    {
-        foreach (var item in Model)
-        {
-            <p>@item.Messenger</p>
-        }
-    }*@
-
-@Html.Action("PartialViewDemo", "Home")
-@Html.Partial("~/Views/Home/StaticPartialView.cshtml", Model)
-
-<div id="DemoPartialView" style="background-color:greenyellow"></div>
-
-
-
-<div class="form-group">
-    <label for="email">UserName:</label>
-    <input type="email" class="form-control" id="txtUserName">
+<div id="ListUserPartialView">
+    
 </div>
-<div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="text" class="form-control" id="txtPassword">
-</div>
-<button type="button" id="btnSave" class="btn btn-success">Đăng nhập</button>
-
-@if (a == 1)
-{
-    <p>A =1</p>
-}
-else
-{
-    <p>A =0 </p>
-}
-
 
 <script>
     $(document).ready(function () {
@@ -68,12 +28,12 @@ else
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/Home/PartialViewDemo",
+            url: "/Account/ListUserPartialView",
             data: JSON.stringify(data_input),
             dataType: 'html',
             cache: false,
             success: function (result) {
-                $("#DemoPartialView").html(result);
+                $("#ListUserPartialView").html(result);
             },
             error: function (e) {
 

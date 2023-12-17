@@ -1,0 +1,28 @@
+﻿@model List<BeAspNet.DataaAccress.DataObject.User>
+<table class="table">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>FullName</th>
+            <th>Address</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.FUllName<td>
+                    <td>@item.UserAddress</td>
+                    <td><a href="/Account/Edit?Id=@item.ID">Sửa</a> | Xóa</td>
+                </tr>
+
+            }
+        }
+
+    </tbody>
+</table>
