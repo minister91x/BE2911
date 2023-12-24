@@ -18,9 +18,9 @@
                     <td>@item.UserName</td>
                     <td>@item.FUllName<td>
                     <td>@item.UserAddress</td>
-                    <td><a href="/Account/Edit?Id=@item.ID">Sửa</a> |
+                    <td><a href="/Account/Edit?Id=@item.ID"><i class="fa fa-pencil-alt"></i></a> |
                     
-                        <a onclick="DeleteUser(@item.ID)"><i class="fa fa-trash"></i>Xóa</a></td>
+                        <a style="cursor:pointer" onclick="DeleteUser(@item.ID)"><i class="fa fa-trash"></i></a></td>
                 </tr>
 
             }

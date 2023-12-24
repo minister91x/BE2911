@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,7 +50,7 @@ namespace BeAspNet.DataaAccress.DataAcessObjecImpl
             return user;
         }
 
-        public List<User> GetUsers()
+        public List<User> GetUsers(int PageIndex, int PageSize, out int TotalCount)
         {
             var list = new List<User>();
             try
@@ -61,26 +62,32 @@ namespace BeAspNet.DataaAccress.DataAcessObjecImpl
                 var cmd = new SqlCommand("SP_User_GetList", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // var cmd1 = new SqlCommand("SELECT * FROM ABC=1=1 ", conn);
-                // cmd.CommandType = System.Data.CommandType.Text;
-
+                cmd.Parameters.AddWithValue("@_PageIndex", PageIndex);
+                cmd.Parameters.AddWithValue("@_PageSize", PageSize);
+                cmd.Parameters.Add("@_TotalCount", System.Data.SqlDbType.Int).Direction
+                   = System.Data.ParameterDirection.Output;
                 // dọc dữ liệu
-                var data = cmd.ExecuteReader();
+                var dataReader = cmd.ExecuteReader();
 
                 // đưa dữ liệu sang object  List<User>();
-                while (data.Read())
-                {
-                    var user = new User
-                    {
-                        ID = data["ID"] != DBNull.Value ? Convert.ToInt32(data["ID"]) : 0,
-                        FUllName = data["FUllName"].ToString(),
-                        UserName = data["UserName"].ToString(),
-                        UserAddress = data["UserAddress"].ToString()
-                    };
+                //while (data.Read())
+                //{
+                //    var user = new User
+                //    {
+                //        ID = data["ID"] != DBNull.Value ? Convert.ToInt32(data["ID"]) : 0,
+                //        FUllName = data["FUllName"].ToString(),
+                //        UserName = data["UserName"].ToString(),
+                //        UserAddress = data["UserAddress"].ToString()
+                //    };
 
-                    list.Add(user);
-                }
+                //    list.Add(user);
+                //}
 
+                list = DataReaderMapToList<User>(dataReader);
+
+                dataReader.Close();
+
+                TotalCount = cmd.Parameters["@_TotalCount"] != (object)DBNull.Value ? Convert.ToInt32(cmd.Parameters["@_TotalCount"].Value) : -1;
             }
             catch (Exception)
             {
@@ -147,6 +154,25 @@ namespace BeAspNet.DataaAccress.DataAcessObjecImpl
             }
 
             return rs;
+        }
+
+        public static List<T> DataReaderMapToList<T>(SqlDataReader dr)
+        {
+            List<T> list = new List<T>();
+            T obj = default(T);
+            while (dr.Read())
+            {
+                obj = Activator.CreateInstance<T>();
+                foreach (PropertyInfo prop in obj.GetType().GetProperties())
+                {
+                    if (!object.Equals(dr[prop.Name], DBNull.Value))
+                    {
+                        prop.SetValue(obj, dr[prop.Name], null);
+                    }
+                }
+                list.Add(obj);
+            }
+            return list;
         }
     }
 }

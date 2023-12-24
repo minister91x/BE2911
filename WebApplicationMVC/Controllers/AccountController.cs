@@ -16,18 +16,31 @@ namespace WebApplicationMVC.Controllers
             return View();
         }
 
-        public ActionResult ListUserPartialView()
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult ListUserPartialView(int PageIndex, int PageSize)
         {
             var model = new List<User>();
+            int TotalPage = 0;
+            int ToatalCount = 0;
             try
             {
-                model = new BeAspNet.DataaAccress.DataAcessObjecImpl.UserDAOImpl().GetUsers();
+                model = new BeAspNet.DataaAccress.DataAcessObjecImpl.UserDAOImpl().GetUsers(PageIndex, PageSize, out ToatalCount);
+
+                if (ToatalCount > 0)
+                {
+                    TotalPage = ToatalCount % PageSize == 0 ? ToatalCount / PageSize : (ToatalCount / PageSize) + 1;
+                }
             }
             catch (Exception ex)
             {
 
                 throw;
             }
+
+            ViewBag.TotalPage = TotalPage;
             return PartialView(model);
         }
 

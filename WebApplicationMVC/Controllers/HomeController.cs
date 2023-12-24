@@ -15,7 +15,7 @@ namespace WebApplicationMVC.Controllers
         //    return View();
         //}
 
-        public ActionResult Index1(int? id)
+        public ActionResult Index(int? id)
         {
             var model = new List<DataResponseModels>();
             var model2 = new List<DataResponseModels>();
@@ -41,7 +41,14 @@ namespace WebApplicationMVC.Controllers
             }
 
             ViewBag.Data = model2;
-            return View("~/Views/Home/MyView.cshtml", model);
+            // return View("~/Views/Home/MyView.cshtml", model);
+
+            return View();
+        }
+
+        public ActionResult Pace()
+        {
+            return View();
         }
 
         [OutputCache(Duration = 100)]

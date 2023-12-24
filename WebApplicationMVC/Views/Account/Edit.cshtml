@@ -4,35 +4,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model BeAspNet.DataaAccress.DataObject.User
-@Html.AntiForgeryToken();
+
 <h2>@ViewBag.Tittle</h2>
 
+<style>
+    .control-width {
+        width: 50% !important
+    }
+</style>
 @*<div class="form-group">
         <label for="email">UserName:</label>
         <input type="email" class="form-control" id="txtId" value="@Model.ID" disabled>
     </div>*@
+<div class="col-md-12">
+    <div class="form-group">
+        <label for="email">UserName:</label>
+        <input type="hidden" id="txtId" value="@Model.ID" />
+        <input type="email" class="form-control control-width" id="txtUserName" value="@Model.UserName">
+    </div>
+    <div class="form-group">
+        <label for="pwd">FullName:</label>
+        <input type="text" class="form-control control-width" id="txtFullName" value="@Model.FUllName">
+    </div>
 
-<div class="form-group">
-    <label for="email">UserName:</label>
-    <input type="hidden" id="txtId" value="@Model.ID" />
-    <input type="email" class="form-control" id="txtUserName" value="@Model.UserName">
+    <div class="form-group">
+        <label for="pwd">Address:</label>
+        <input type="text" class="form-control control-width" id="txtAdress" value="@Model.UserAddress">
+    </div>
+    <button type="button" id="btnUpdate" class="btn btn-success"><i class="fa fa-save"></i> Cập nhật</button>
+    <button type="button" id="btnbackward" class="btn btn-default"><i class="fa fa-backward"></i> Quay lại</button>
 </div>
-<div class="form-group">
-    <label for="pwd">FullName:</label>
-    <input type="text" class="form-control" id="txtFullName" value="@Model.FUllName">
-</div>
-
-<div class="form-group">
-    <label for="pwd">Address:</label>
-    <input type="text" class="form-control" id="txtAdress" value="@Model.UserAddress">
-</div>
-<button type="button" id="btnUpdate" class="btn btn-success">Cập nhật</button>
 <script>
     $(document).ready(function () {
 
         $("#btnUpdate").click(function () {
             Update();
         });
+
+        $("#btnbackward").click(function () {
+            window.location.href = "/Account/Index";
+        });
+
 
     });
 
