@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account\EditModel.cs" />
     <Compile Include="Models\DataResponseModels.cs" />
     <Compile Include="Models\IndexRequestData.cs" />
     <Compile Include="Models\RequestData.cs" />
@@ -197,6 +198,10 @@
     <ProjectReference Include="..\BeAspNet.DataaAccress\BeAspNet.DataaAccress.csproj">
       <Project>{2993cf4b-7f65-40e9-bf9f-af6cb892810d}</Project>
       <Name>BeAspNet.DataaAccress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibs\CommonLibs.csproj">
+      <Project>{25452cfe-0b91-49bd-a35d-a8da81248ede}</Project>
+      <Name>CommonLibs</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

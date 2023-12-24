@@ -13,5 +13,7 @@ namespace BeAspNet.DataaAccress.DataAccessObject
         User GetById(int id);
 
         int UserUpdate(User user);
+
+        int UserDelete(int UserId);
     }
 }

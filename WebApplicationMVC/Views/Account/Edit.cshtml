@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model BeAspNet.DataaAccress.DataObject.User
-<h2>AccountEdit</h2>
+@Html.AntiForgeryToken();
+<h2>@ViewBag.Tittle</h2>
 
 @*<div class="form-group">
         <label for="email">UserName:</label>
@@ -38,18 +39,19 @@
 
     function Update() {
 
-        var data_input = {
+        var edit_model = {
             ID: $("#txtId").val(),
             UserName: $("#txtUserName").val(),
             FUllName: $("#txtFullName").val(),
-            UserAddress: $("#txtAdress").val()
+            UserAddress: $("#txtAdress").val(),
+            //__RequestVerificationToken: $("input[name=__RequestVerificationToken]").val()
         };
 
         $.ajax({
             type: "POST",
             contentType: "application/json",
             url: "/Account/AccountUpdate",
-            data: JSON.stringify(data_input),
+            data: JSON.stringify(edit_model),
             dataType: 'json',
             cache: false,
             success: function (result) {

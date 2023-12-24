@@ -91,6 +91,33 @@ namespace BeAspNet.DataaAccress.DataAcessObjecImpl
             return list;
         }
 
+        public int UserDelete(int UserId)
+        {
+            int rs = 0;
+            try
+            {  // Mở connectionstring
+                var conn = DBHelper.GetSqlConnection();
+                // Thực hiện lấy dữ liệu
+
+                var cmd = new SqlCommand("SP_USER_DELETE", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_Id", UserId);
+                cmd.Parameters.Add("@_ResponseCode", System.Data.SqlDbType.Int).Direction
+                    = System.Data.ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+
+                rs = cmd.Parameters["@_ResponseCode"] != (object)DBNull.Value ? Convert.ToInt32(cmd.Parameters["@_ResponseCode"].Value) : -1;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return rs;
+        }
+
         public int UserUpdate(User user)
         {
             int rs = 0;

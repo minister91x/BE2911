@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\bin\Debug\CommonLibs.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\bin\Debug\CommonLibs.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\obj\Debug\CommonLibs.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\obj\Debug\CommonLibs.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\obj\Debug\CommonLibs.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\CommonLibs\obj\Debug\CommonLibs.pdb

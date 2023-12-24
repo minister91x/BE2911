@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2993CF4B-7F65-40E9-BF9F-AF6CB892810D}</ProjectGuid>
+    <ProjectGuid>{25452CFE-0B91-49BD-A35D-A8DA81248EDE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeAspNet.DataaAccress</RootNamespace>
-    <AssemblyName>BeAspNet.DataaAccress</AssemblyName>
+    <RootNamespace>CommonLibs</RootNamespace>
+    <AssemblyName>CommonLibs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,12 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessObject\IUserDAO.cs" />
-    <Compile Include="DataAcessObjecImpl\UserDAOImpl.cs" />
-    <Compile Include="DataObject\User.cs" />
-    <Compile Include="DBHelper.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Commom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

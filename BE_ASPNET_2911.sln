@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicatioCoreMVC", "Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeAspNet.DataaAccress", "BeAspNet.DataaAccress\BeAspNet.DataaAccress.csproj", "{2993CF4B-7F65-40E9-BF9F-AF6CB892810D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibs", "CommonLibs\CommonLibs.csproj", "{25452CFE-0B91-49BD-A35D-A8DA81248EDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2993CF4B-7F65-40E9-BF9F-AF6CB892810D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2993CF4B-7F65-40E9-BF9F-AF6CB892810D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2993CF4B-7F65-40E9-BF9F-AF6CB892810D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25452CFE-0B91-49BD-A35D-A8DA81248EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25452CFE-0B91-49BD-A35D-A8DA81248EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25452CFE-0B91-49BD-A35D-A8DA81248EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25452CFE-0B91-49BD-A35D-A8DA81248EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

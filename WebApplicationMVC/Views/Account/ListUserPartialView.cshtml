@@ -18,7 +18,9 @@
                     <td>@item.UserName</td>
                     <td>@item.FUllName<td>
                     <td>@item.UserAddress</td>
-                    <td><a href="/Account/Edit?Id=@item.ID">Sửa</a> | Xóa</td>
+                    <td><a href="/Account/Edit?Id=@item.ID">Sửa</a> |
+                    
+                        <a onclick="DeleteUser(@item.ID)"><i class="fa fa-trash"></i>Xóa</a></td>
                 </tr>
 
             }
@@ -26,3 +28,62 @@
 
     </tbody>
 </table>
+<script>
+  
+
+    function DeleteUser(id) {
+
+        var rs = confirm("Bạn có chắc chắn muốn xóa bản ghi này không ?");
+        if (rs) {
+
+            var edit_model = {
+                ID: id
+            };
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "/Account/AccountDelete",
+                data: JSON.stringify(edit_model),
+                dataType: 'json',
+                cache: false,
+                success: function (result) {
+                    alert(result.mes);
+                    LoadPartialView();
+                },
+                error: function (e) {
+
+                    console.log("ERROR : ", e);
+
+                }
+            });
+        }
+
+    }
+
+
+    function LoadPartialView() {
+
+        var data_input = {
+            Name: 'Quan'
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/Account/ListUserPartialView",
+            data: JSON.stringify(data_input),
+            dataType: 'html',
+            cache: false,
+            success: function (result) {
+                $("#ListUserPartialView").html(result);
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+            }
+        });
+
+    }
+</script>
