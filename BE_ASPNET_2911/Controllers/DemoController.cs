@@ -9,14 +9,14 @@ namespace BE_ASPNET_2911.Controllers
     public class DemoController : ControllerBase
     {
         [HttpPost("GetData")]
-        public async Task<ActionResult> GetData(string name)
+        public async Task<ActionResult> GetData([FromBody] DemoResponseData requestData)
         {
             var list = new List<DemoResponseData>();
             try
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    list.Add(new DemoResponseData { Name = "Khoa hoc BACKEND " + i + " " + name });
+                    list.Add(new DemoResponseData { Name = "Khoa hoc BACKEND " + i + " " + requestData.Name });
                 }
             }
             catch (Exception ex)

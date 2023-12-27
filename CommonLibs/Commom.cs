@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,31 @@ namespace CommonLibs
             {
                 return false;
             }
+        }
+
+
+        public static string SendPost(string url, string baseUrl, string jsonData)
+        {
+            try
+            {
+                var options = new RestClientOptions(url)
+                {
+                    MaxTimeout = -1,
+                };
+                var client = new RestClient(options);
+                var request = new RestRequest(baseUrl, Method.Post);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddStringBody(jsonData, DataFormat.Json);
+                RestResponse response = client.Execute(request);
+                return response.Content;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return string.Empty;
         }
     }
 }

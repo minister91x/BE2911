@@ -128,6 +128,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\EditModel.cs" />
+    <Compile Include="Models\Account\GetDataRequest.cs" />
+    <Compile Include="Models\Account\GetResponseData.cs" />
     <Compile Include="Models\DataResponseModels.cs" />
     <Compile Include="Models\IndexRequestData.cs" />
     <Compile Include="Models\RequestData.cs" />

@@ -2,6 +2,6 @@
 {
     public class DemoResponseData
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 }

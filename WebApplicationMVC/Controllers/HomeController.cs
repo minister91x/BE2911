@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationMVC.Filter;
 using WebApplicationMVC.Models;
+using WebApplicationMVC.Models.Account;
 
 namespace WebApplicationMVC.Controllers
 {
@@ -15,7 +17,7 @@ namespace WebApplicationMVC.Controllers
         //    return View();
         //}
 
-        public ActionResult Index(int? id)
+        public ActionResult Index(string inputName)
         {
             var model = new List<DataResponseModels>();
             var model2 = new List<DataResponseModels>();
@@ -24,7 +26,7 @@ namespace WebApplicationMVC.Controllers
 
             try
             {
-                str = str + id;
+                str = str + inputName;
                 for (int i = 0; i < 10; i++)
                 {
                     model.Add(new DataResponseModels
@@ -39,10 +41,32 @@ namespace WebApplicationMVC.Controllers
 
                 throw;
             }
+            var object_response_from_Server = new List<GetResponseData>();
+            //Khai báo URL CỦA SERVER
+            var config_root_url = System.Configuration.ConfigurationManager.AppSettings["API_URL_ROOT"].ToString() ?? "";
 
-            ViewBag.Data = model2;
+            var data = new GetDataRequest
+            {
+                name = inputName
+            };
+
+            // ĐƯA DỮ LIỆU GỬI LÊN SERVER SANG DẠNG JSON
+            var jsonData = JsonConvert.SerializeObject(data);
+
+            // GỌI HÀM ĐỂ GỬI DỮ LIỆU LÊN SERVER
+            var data_from_server = CommonLibs.Commom.SendPost(config_root_url, "Demo/GetData", jsonData);
+
+            // NHẬN KẾT QUẢ TỪ SERVER TRẢ VỀ 
+            if (data_from_server != null)
+            {
+                // ĐƯA DỮ LIỆU SERVER TRẢ VỀ Ở DẠNG JSON SANG LIST OBJECT
+                object_response_from_Server = JsonConvert.DeserializeObject<List<GetResponseData>>(data_from_server);
+            }
+
+
             // return View("~/Views/Home/MyView.cshtml", model);
 
+            ViewBag.DataServer = object_response_from_Server;
             return View();
         }
 

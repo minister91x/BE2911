@@ -20,8 +20,8 @@ namespace WebApplicationMVC.Controllers
         [HttpPost]
         public ActionResult Index2()
         {
-           
-            var list = new BeAspNet.DataaAccress.DataAcessObjecImpl.UserDAOImpl().GetUsers();
+            int totalAmount = 0;
+            var list = new BeAspNet.DataaAccress.DataAcessObjecImpl.UserDAOImpl().GetUsers(1,10,out totalAmount);
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
