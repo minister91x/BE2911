@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\DataAccess.Demo.deps.json
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\DataAccess.Demo.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\DataAccess.Demo.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\refint\DataAccess.Demo.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\ref\DataAccess.Demo.dll

@@ -25,3 +25,5 @@ C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\obj\Debug\net6.0\refin
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\obj\Debug\net6.0\BE_ASPNET_2911.pdb
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\obj\Debug\net6.0\BE_ASPNET_2911.genruntimeconfig.cache
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\obj\Debug\net6.0\ref\BE_ASPNET_2911.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\DataAccess.Demo.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\DataAccess.Demo.pdb
