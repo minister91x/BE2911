@@ -1,5 +1,7 @@
 ﻿using DataAccess.Demo.DataAccessObject;
 using DataAccess.Demo.DataObject;
+using DataAccess.Demo.Dbcontext;
+using DataAccess.Demo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +10,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Demo.DataAcessObjecImpl
 {
-    public class AccountServices : IAccountServices
+    public class AccountRepository : IAccountRepository
     {
-        public List<User> GetUsers()
+        private MyShopDbContext _dbcontext;
+        public AccountRepository(MyShopDbContext dbcontext)
+        {
+            _dbcontext = dbcontext;
+        }
+
+        public async Task<List<User>> GetUsers()
         {
             var list = new List<User>();
             try
             {
-                for (int i = 0; i < 5; i++)
-                {
-                    list.Add(new User { ID = 1, UserName = "UserName_" + i, FUllName = "BE_2911", UserAddress = "TEAMS" });
-                }
+               list = _dbcontext.users.ToList();
             }
             catch (Exception ex)
             {
@@ -27,10 +32,6 @@ namespace DataAccess.Demo.DataAcessObjecImpl
             }
 
             return list;
-
-
-
-
         }
     }
 }

@@ -4,14 +4,14 @@
     "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\BE_2911.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj",
-        "projectName": "DataAccess.Demo",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\BE_2911.Model.csproj",
+        "projectName": "BE_2911.Model",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\BE_2911.Model.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,104 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\CommonLibs\\CommonLibs.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\CommonLibs\\CommonLibs.csproj",
+        "projectName": "CommonLibs",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\CommonLibs\\CommonLibs.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj",
+        "projectName": "DataAccess.Demo",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\DataAccess.Demo.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\DataAccess.Demo\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\BE_2911.Model.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\BE_2911.Model\\BE_2911.Model.csproj"
+              },
+              "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\CommonLibs\\CommonLibs.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_ASPNET_2911\\CommonLibs\\CommonLibs.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.23, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

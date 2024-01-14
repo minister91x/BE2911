@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\bin\Debug\net6.0\BE_2911.Model.deps.json
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\bin\Debug\net6.0\BE_2911.Model.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\bin\Debug\net6.0\BE_2911.Model.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\refint\BE_2911.Model.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\BE_2911.Model.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_2911.Model\obj\Debug\net6.0\ref\BE_2911.Model.dll

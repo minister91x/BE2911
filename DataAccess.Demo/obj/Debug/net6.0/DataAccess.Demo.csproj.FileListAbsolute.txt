@@ -10,3 +10,15 @@ C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\Data
 C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\refint\DataAccess.Demo.dll
 C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.pdb
 C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\ref\DataAccess.Demo.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\DataAccess.Demo.runtimeconfig.json
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.genruntimeconfig.cache
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\CommonLibs.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\CommonLibs.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\CommonLibs.dll.config
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\RestSharp.xml
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\obj\Debug\net6.0\DataAccess.Demo.csproj.CopyComplete
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\BE_2911.Model.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\DataAccess.Demo\bin\Debug\net6.0\BE_2911.Model.pdb

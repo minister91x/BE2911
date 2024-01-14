@@ -1,6 +1,7 @@
 ﻿using BE_ASPNET_2911.Models;
 using DataAccess.Demo.DataAccessObject;
 using DataAccess.Demo.DataObject;
+using DataAccess.Demo.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,9 @@ namespace BE_ASPNET_2911.Controllers
     [ApiController]
     public class DemoController : ControllerBase
     {
-        private IAccountServices _accountServices;
+        private IAccountRepository _accountServices;
         private IConfiguration _configuration;
-        public DemoController(IAccountServices accountServices, IConfiguration configuration)
+        public DemoController(IAccountRepository accountServices, IConfiguration configuration)
         {
             _accountServices = accountServices;
             _configuration = configuration;
@@ -26,7 +27,7 @@ namespace BE_ASPNET_2911.Controllers
             {
                 var url = _configuration["URL:ROOT"] ?? "";
 
-                list = _accountServices.GetUsers();
+                list = await _accountServices.GetUsers();
             }
             catch (Exception ex)
             {
@@ -36,5 +37,8 @@ namespace BE_ASPNET_2911.Controllers
 
             return Ok(list);
         }
+
+
+      
     }
 }

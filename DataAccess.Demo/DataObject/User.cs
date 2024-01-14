@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Demo.DataObject
 {
-    public class User
+    public class UserNet
     {
         public int ID { get; set; }
         public string UserName { get; set; }
