@@ -9,9 +9,9 @@ namespace DataAccess.Demo.UnitOfWork
 {
     public interface IMyShopUnitOfWork
     {
-        public IProductRepository productRepository { get; set; }
+        //public IProductRepository productRepository { get; set; }
         public IAccountRepository accountRepository { get; set; }
-
+        public IProductGenericRepository _productGenericRepository { get; set; }
         int SaveChange();
     }
 }

@@ -1,9 +1,14 @@
 ﻿using BE_2911.Model.Product;
+using BE_ASPNET_2911.Filter;
 using DataAccess.Demo.DataAccessObject;
 using DataAccess.Demo.Entities;
 using DataAccess.Demo.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace BE_ASPNET_2911.Controllers
 {
@@ -12,17 +17,20 @@ namespace BE_ASPNET_2911.Controllers
     public class ProductController : ControllerBase
     {
         private IMyShopUnitOfWork _myShopUnitOfWork;
-        public ProductController(IMyShopUnitOfWork myShopUnitOfWork)
+        private IConfiguration _configuration;
+        public ProductController(IMyShopUnitOfWork myShopUnitOfWork, IConfiguration configuration)
         {
             _myShopUnitOfWork = myShopUnitOfWork;
+            _configuration = configuration;
         }
 
         [HttpPost("ProductGetList")]
+        [Authorize()]
         public async Task<ActionResult> Products_GetList()
         {
             try
             {
-                var list = await _myShopUnitOfWork.productRepository.Products_GetList();
+                var list = await _myShopUnitOfWork._productGenericRepository.GetAll();
 
                 return Ok(list);
             }
@@ -37,7 +45,7 @@ namespace BE_ASPNET_2911.Controllers
         {
             try
             {
-                await _myShopUnitOfWork.productRepository.Product_InsertUpdate(product);
+                await _myShopUnitOfWork._productGenericRepository.Add(product);
                 var result = _myShopUnitOfWork.SaveChange();
                 return result;
             }
@@ -53,9 +61,10 @@ namespace BE_ASPNET_2911.Controllers
         {
             try
             {
-                var result = await _myShopUnitOfWork.productRepository.Product_Delete(requestData);
+                var product = new Product { ProductId = requestData.ProductId };
+                _myShopUnitOfWork._productGenericRepository.Remove(product);
 
-                return result;
+                return 1;
             }
             catch (Exception ex)
             {
@@ -63,5 +72,9 @@ namespace BE_ASPNET_2911.Controllers
                 throw;
             }
         }
+
+
+        
+
     }
 }

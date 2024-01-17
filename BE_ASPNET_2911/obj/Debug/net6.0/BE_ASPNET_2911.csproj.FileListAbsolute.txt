@@ -72,3 +72,4 @@ C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\RestS
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\BE_2911.Model.dll
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\BE_2911.Model.pdb
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
