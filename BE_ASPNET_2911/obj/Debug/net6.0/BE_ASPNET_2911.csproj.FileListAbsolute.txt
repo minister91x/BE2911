@@ -73,3 +73,8 @@ C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Micro
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\BE_2911.Model.dll
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\BE_2911.Model.pdb
 C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Admin\source\repos\BE_ASPNET_2911\BE_ASPNET_2911\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

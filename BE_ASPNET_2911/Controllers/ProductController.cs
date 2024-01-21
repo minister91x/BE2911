@@ -3,6 +3,7 @@ using BE_ASPNET_2911.Filter;
 using DataAccess.Demo.DataAccessObject;
 using DataAccess.Demo.Entities;
 using DataAccess.Demo.UnitOfWork;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -45,6 +46,7 @@ namespace BE_ASPNET_2911.Controllers
         {
             try
             {
+             
                 await _myShopUnitOfWork._productGenericRepository.Add(product);
                 var result = _myShopUnitOfWork.SaveChange();
                 return result;

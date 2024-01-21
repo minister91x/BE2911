@@ -20,7 +20,7 @@ namespace DataAccess.Demo.DataAcessObjecImpl
 
         public async Task<List<Product>> Products_GetList()
         {
-            return _dbcontext.product.ToList();
+            return new List<Product>();// _dbcontext.product.ToList();
         }
 
         public async Task<int> Product_Delete(ProductDelete_RequestData requestData)
@@ -32,18 +32,18 @@ namespace DataAccess.Demo.DataAcessObjecImpl
                     return -11;
                 }
 
-                var product_delete = _dbcontext.product.ToList()
-                    .Where(s => s.ProductId == requestData.ProductId).FirstOrDefault();
+                //var product_delete = _dbcontext.product.ToList()
+                //    .Where(s => s.ProductId == requestData.ProductId).FirstOrDefault();
 
-                if (product_delete == null || product_delete.ProductId < 0)
-                {
-                    return -1;
-                }
+                //if (product_delete == null || product_delete.ProductId < 0)
+                //{
+                //    return -1;
+                //}
 
-                _dbcontext.product.Remove(product_delete);
-                var result = _dbcontext.SaveChanges();
-                return result;
-
+                //_dbcontext.product.Remove(product_delete);
+                //var result = _dbcontext.SaveChanges();
+                //return result;
+                return 1;
             }
             catch (Exception ex)
             {
@@ -76,21 +76,21 @@ namespace DataAccess.Demo.DataAcessObjecImpl
                 {
                     // INSERT
 
-                    _dbcontext.product.Add(product);
+                   // _dbcontext.product.Add(product);
                    /// var result = _dbcontext.SaveChanges();
                     return 1;
                 }
                 else
                 {
                     //UPDATE 
-                    var product_update = _dbcontext.product.ToList().Where(s => s.ProductId == product.ProductId).FirstOrDefault();
+                    //var product_update = _dbcontext.product.ToList().Where(s => s.ProductId == product.ProductId).FirstOrDefault();
 
-                    if (product_update == null || product_update.ProductId < 0)
-                    {
-                        return -1;
-                    }
+                    //if (product_update == null || product_update.ProductId < 0)
+                    //{
+                    //    return -1;
+                    //}
 
-                    _dbcontext.product.Update(product_update);
+                    //_dbcontext.product.Update(product_update);
                    // var result = _dbcontext.SaveChanges();
                     return 1;
 

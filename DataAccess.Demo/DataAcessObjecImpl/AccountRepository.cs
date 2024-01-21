@@ -21,23 +21,23 @@ namespace DataAccess.Demo.DataAcessObjecImpl
 
         public async Task<int> AccountUpdateRefeshToken(AccountUpdateRefeshTokenRequestData requestData)
         {
-            try
-            {
-                var user = _dbcontext.users.Where(s => s.UserID == requestData.UserID).FirstOrDefault();
-                if (user != null)
-                {
-                    user.RefeshToken = requestData.RefeshToken;
-                    user.RefeshTokenExpired = requestData.RefeshTokenExpired;
-                    _dbcontext.users.Update(user);
-                   _dbcontext.SaveChanges();
-                    return 1;
-                }
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    var user = _dbcontext.users.Where(s => s.UserID == requestData.UserID).FirstOrDefault();
+            //    if (user != null)
+            //    {
+            //        user.RefeshToken = requestData.RefeshToken;
+            //        user.RefeshTokenExpired = requestData.RefeshTokenExpired;
+            //        _dbcontext.users.Update(user);
+            //       _dbcontext.SaveChanges();
+            //        return 1;
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
 
             return 0;
         }
@@ -45,15 +45,15 @@ namespace DataAccess.Demo.DataAcessObjecImpl
         public async Task<List<User>> GetUsers()
         {
             var list = new List<User>();
-            try
-            {
-                list = _dbcontext.users.ToList();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    list = _dbcontext.users.ToList();
+            //}
+            //catch (Exception ex)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
 
             return list;
         }
@@ -63,15 +63,15 @@ namespace DataAccess.Demo.DataAcessObjecImpl
             var user = new User();
             try
             {
-                var user_db = _dbcontext.users.Where(s => s.UserName == requestData.UserName && s.Password == requestData.Password).FirstOrDefault();
-                if (user_db == null)
-                {
-                    return user;
-                }
+                //var user_db = _dbcontext.users.Where(s => s.UserName == requestData.UserName && s.Password == requestData.Password).FirstOrDefault();
+                //if (user_db == null)
+                //{
+                //    return user;
+                //}
 
-                user.UserID = user_db.UserID;
-                user.UserName = user_db.UserName;
-                user.FullName = user_db.FullName;
+                //user.UserID = user_db.UserID;
+                //user.UserName = user_db.UserName;
+                //user.FullName = user_db.FullName;
 
                 return user;
             }

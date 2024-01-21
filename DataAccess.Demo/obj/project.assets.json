@@ -11,6 +11,40 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Cryptography.Internal/6.0.23": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/6.0.23": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "6.0.23"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.23": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.23",
+          "Microsoft.Extensions.Identity.Stores": "6.0.23"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -231,6 +265,34 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Identity.Core/6.0.23": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.23",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/6.0.23": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Identity.Core": "6.0.23",
+          "Microsoft.Extensions.Logging": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Identity.Stores.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/6.0.0": {
@@ -673,6 +735,59 @@
         "logo.png"
       ]
     },
+    "Microsoft.AspNetCore.Cryptography.Internal/6.0.23": {
+      "sha512": "m/LACmFx927uyIINU1EWJG1KCwUDGO2OxesdQjbjHXRrPZGfgFNPRnnW3qe4/p3iBEqUB3bc1q79I68dMh4VXQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.internal/6.0.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/net461/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "microsoft.aspnetcore.cryptography.internal.6.0.23.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.internal.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/6.0.23": {
+      "sha512": "bGLn6VqStKJR09K4NmfKdxYLIF93ILurFmx+qP9zV99SPRzaa05sOUBkWrZbhZGiQoeo8o6pNAAVy+zR3mm7SQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/6.0.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/net461/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "microsoft.aspnetcore.cryptography.keyderivation.6.0.23.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.23": {
+      "sha512": "yNEHYuOOdAiZzgopbmYLe3csZ9gstrKu++HzG/1lfujDL997QzSe30U3GTbK/fzI/GGo+XCEKy8KVzmu8DJIDw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/6.0.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
+        "microsoft.aspnetcore.identity.entityframeworkcore.6.0.23.nupkg.sha512",
+        "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
+      ]
+    },
     "Microsoft.CSharp/4.5.0": {
       "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
@@ -1044,6 +1159,44 @@
         "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Identity.Core/6.0.23": {
+      "sha512": "67uH4Kg+uer6Rn+nwosy98E11v1p+hQFsnm3YxYlwm2id2aqLjEXS3KAZVfyQ9ENlqmK65mR79vxDXvYgCuaaA==",
+      "type": "package",
+      "path": "microsoft.extensions.identity.core/6.0.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Identity.Core.dll",
+        "lib/net461/Microsoft.Extensions.Identity.Core.xml",
+        "lib/net6.0/Microsoft.Extensions.Identity.Core.dll",
+        "lib/net6.0/Microsoft.Extensions.Identity.Core.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.xml",
+        "microsoft.extensions.identity.core.6.0.23.nupkg.sha512",
+        "microsoft.extensions.identity.core.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Identity.Stores/6.0.23": {
+      "sha512": "JH0wC2DqFsIRkPYaPyXAfrmPdralHsxVS6YESVv6GXtvXGKJCg39rRjYi4h1cJgdQxkm3EwNQKJU7/snGCIhoA==",
+      "type": "package",
+      "path": "microsoft.extensions.identity.stores/6.0.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Identity.Stores.dll",
+        "lib/net461/Microsoft.Extensions.Identity.Stores.xml",
+        "lib/net6.0/Microsoft.Extensions.Identity.Stores.dll",
+        "lib/net6.0/Microsoft.Extensions.Identity.Stores.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.xml",
+        "microsoft.extensions.identity.stores.6.0.23.nupkg.sha512",
+        "microsoft.extensions.identity.stores.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/6.0.0": {
@@ -1890,6 +2043,7 @@
     "net6.0": [
       "BE_2911.Model >= 1.0.0",
       "CommonLibs >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.23",
       "Microsoft.EntityFrameworkCore >= 6.0.23",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.23",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.23",
@@ -1942,6 +2096,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.23, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.23, )"
