@@ -20,7 +20,7 @@ namespace DataAccess.Demo.DataAcessObjecImpl
 
         public async Task<List<Product>> Products_GetList()
         {
-            return new List<Product>();// _dbcontext.product.ToList();
+            return _dbcontext.product.ToList();
         }
 
         public async Task<int> Product_Delete(ProductDelete_RequestData requestData)

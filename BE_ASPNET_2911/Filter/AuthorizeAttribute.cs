@@ -15,33 +15,38 @@ namespace BE_ASPNET_2911.Filter
 {
     public class AuthorizeAttribute : TypeFilterAttribute
     {
-        public AuthorizeAttribute() : base(typeof(DemoAuthorizeActionFilter))
+        public AuthorizeAttribute(string functionCode, string permission) : base(typeof(DemoAuthorizeActionFilter))
         {
+            Arguments = new object[] { functionCode, permission };
         }
     }
 
     public class DemoAuthorizeActionFilter : IAsyncAuthorizationFilter
     {
+        private readonly string _functionCode;
+        private readonly string _permission;
+
         private IConfiguration _configuration;
         private IMyShopUnitOfWork _myShopUnitOfWork;
-        public DemoAuthorizeActionFilter(IConfiguration configuration, IMyShopUnitOfWork myShopUnitOfWork)
+        public DemoAuthorizeActionFilter(string functionCode, string permission, IConfiguration configuration, IMyShopUnitOfWork myShopUnitOfWork)
         {
             _configuration = configuration;
             _myShopUnitOfWork = myShopUnitOfWork;
+            _functionCode = functionCode;
+            _permission = permission;
         }
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
 
-            var headerAuthorization = context.HttpContext.Request.Headers[HeaderNames.Authorization];
-            var accessToken = headerAuthorization.FirstOrDefault()?.Split(' ')[1] ?? "";
-
-          
+            //var headerAuthorization = context.HttpContext.Request.Headers[HeaderNames.Authorization];
+            //var accessToken = headerAuthorization.FirstOrDefault()?.Split(' ')[1] ?? "";
 
 
             var identity = context.HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
                 var userClaims = identity.Claims;
+                // Bước 1 : Lấy thông tin User từ Token
                 var user = new User
                 {
                     UserName = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value,
@@ -60,42 +65,78 @@ namespace BE_ASPNET_2911.Filter
 
                     return;
                 }
+                //Lấy functionId dựa vào _functionCode
+                var function = await _myShopUnitOfWork.accountRepository.GetFunction(_functionCode);
+                if (function == null || function.FunctionID <= 0)
+                {
+                    context.HttpContext.Response.ContentType = "application/json";
+                    context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    context.Result = new JsonResult(new
+                    {
+                        Code = HttpStatusCode.Unauthorized,
+                        Message = "Bạn không"
+                    });
 
-                //                var principal = GetPrincipalFromExpiredToken(accessToken);
-                //                if (principal == null)
-                //                {
-                //                    //  return BadRequest("Invalid access token or refresh token");
-                //                }
+                    return;
+                }
 
-                //#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                //#pragma warning disable CS8602 // Dereference of a possibly null reference.
-                //                string username = principal.Identity.Name;
-                //#pragma warning restore CS8602 // Dereference of a possibly null reference.
-                //#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                // Bước 3: Lấy userFunction dựa vào userid , functionId , Permisstion
+                var userFunction = await _myShopUnitOfWork.accountRepository.GetUserFunction(user.UserID, function.FunctionID, _permission);
 
-                //                var user_db =  _myShopUnitOfWork.accountRepository.GetUsers().Result.Where(s=>s.UserName== user.UserName).FirstOrDefault();
+               
+                if (userFunction == null || userFunction.FunctionID <= 0)
+                {
+                    context.HttpContext.Response.ContentType = "application/json";
+                    context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    context.Result = new JsonResult(new
+                    {
+                        Code = HttpStatusCode.Unauthorized,
+                        Message = "Bạn không có quyền"
+                    });
 
-                //                if (user_db == null || user_db.RefeshToken != refreshToken || user.RefeshTokenExpired  <= DateTime.Now)
-                //                {
-                //                    return BadRequest("Invalid access token or refresh token");
-                //                }
+                    return;
+                }
 
-                //var newAccessToken = CreateToken(principal.Claims.ToList());
-                //var newRefreshToken = GenerateRefreshToken();
+                // Bước 4: Check kết quả
+                switch (_permission)
+                {
+                    case "ISVIEW":
+                        if (userFunction.IsView == 0)
+                        {
+                            context.HttpContext.Response.ContentType = "application/json";
+                            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                            context.Result = new JsonResult(new
+                            {
+                                Code = HttpStatusCode.Unauthorized,
+                                Message = "Bạn không có quyền xem danh sách "
+                            });
 
-                //user.RefreshToken = newRefreshToken;
-                //await _userManager.UpdateAsync(user);
+                            return;
+                        }
+                        break;
+                    case "ISUPDATE":
+                        if (userFunction.IsUpdate == 0)
+                        {
+                            context.HttpContext.Response.ContentType = "application/json";
+                            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                            context.Result = new JsonResult(new
+                            {
+                                Code = HttpStatusCode.Unauthorized,
+                                Message = "Bạn không có quyền cập nhật "
+                            });
 
-                //return new ObjectResult(new
-                //{
-                //    accessToken = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
-                //    refreshToken = newRefreshToken
-                //});
+                            return;
+                        }
+                        break;
+
+                    
+                }
+
 
             }
         }
 
-      
+
     }
 
 }

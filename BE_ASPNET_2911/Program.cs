@@ -14,7 +14,7 @@ var configuration = builder.Configuration;
 builder.Services.AddDbContext<MyShopDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStrName"), b => b.MigrationsAssembly("BE_ASPNET_2911")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyShopDbContext>().AddDefaultTokenProviders();
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyShopDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

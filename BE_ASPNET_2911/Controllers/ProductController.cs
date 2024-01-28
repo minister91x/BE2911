@@ -26,7 +26,7 @@ namespace BE_ASPNET_2911.Controllers
         }
 
         [HttpPost("ProductGetList")]
-        [Authorize()]
+        [Authorize("MYSHOP_PRODUCT_GETLIST", "ISVIEW")]
         public async Task<ActionResult> Products_GetList()
         {
             try
@@ -41,12 +41,15 @@ namespace BE_ASPNET_2911.Controllers
                 throw;
             }
         }
+
+
+
         [HttpPost("Product_InsertUpdate")]
         public async Task<int> Product_InsertUpdate([FromBody] Product product)
         {
             try
             {
-             
+
                 await _myShopUnitOfWork._productGenericRepository.Add(product);
                 var result = _myShopUnitOfWork.SaveChange();
                 return result;
@@ -76,7 +79,7 @@ namespace BE_ASPNET_2911.Controllers
         }
 
 
-        
+
 
     }
 }

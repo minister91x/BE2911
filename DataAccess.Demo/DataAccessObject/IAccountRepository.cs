@@ -16,5 +16,9 @@ namespace DataAccess.Demo.DataAccessObject
         Task<User> User_Login(AccountLoginRequestData requestData);
 
         Task<int> AccountUpdateRefeshToken(AccountUpdateRefeshTokenRequestData requestData);
+
+
+        Task<Function> GetFunction(string FunctionCode);
+        Task<UserFunction> GetUserFunction(int UserId, int FunctionID, string PermissionName);
     }
 }
