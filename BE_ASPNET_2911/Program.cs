@@ -5,6 +5,7 @@ using DataAccess.Demo.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<MyShopDbContext>(options =>
 
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyShopDbContext>().AddDefaultTokenProviders();
 
+builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = configuration["RedisCacheUrl"]; });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -52,5 +54,16 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx => {
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Headers",
+          "Origin, X-Requested-With, Content-Type, Accept");
+    },
+    FileProvider = new PhysicalFileProvider(
+           Path.Combine(builder.Environment.ContentRootPath, "Upload")),
+    RequestPath = "/Upload"
+});
 
 app.Run();

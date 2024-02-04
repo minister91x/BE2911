@@ -98,6 +98,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.23, )"
@@ -107,6 +111,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.23, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
