@@ -1,3 +1,4 @@
+using DataAccess.Demo.Dapper;
 using DataAccess.Demo.DataAccessObject;
 using DataAccess.Demo.DataAcessObjecImpl;
 using DataAccess.Demo.Dbcontext;
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<MyShopDbContext>(options =>
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyShopDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = configuration["RedisCacheUrl"]; });
+
+builder.Services.AddTransient<IApplicationDbConnection, ApplicationDbConnection>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -41,6 +44,7 @@ builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IMyShopUnitOfWork, MyShopUnitOfWork>();
 builder.Services.AddTransient<IProductGenericRepository, ProductGenericRepository>();
+builder.Services.AddTransient<IProductServicesDapper, ProductServicesDapper>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -23,14 +23,17 @@ namespace BE_ASPNET_2911.Controllers
     {
         private IMyShopUnitOfWork _myShopUnitOfWork;
         private IConfiguration _configuration;
+        private IProductServicesDapper _productServicesDapper;
 
         private readonly IDistributedCache _cache;
 
-        public ProductController(IMyShopUnitOfWork myShopUnitOfWork, IConfiguration configuration, IDistributedCache cache)
+        public ProductController(IMyShopUnitOfWork myShopUnitOfWork, IConfiguration configuration, 
+            IDistributedCache cache, IProductServicesDapper productServicesDapper)
         {
             _myShopUnitOfWork = myShopUnitOfWork;
             _configuration = configuration;
             _cache = cache;
+            _productServicesDapper = productServicesDapper;
         }
 
         [HttpPost("ProductGetList")]
@@ -58,10 +61,10 @@ namespace BE_ASPNET_2911.Controllers
 
                 // Chưa có dữ liệu trong Redis
                 // Vào database để lấy
-                list = await _myShopUnitOfWork._productGenericRepository.GetAll();
-
-                //Set lại cache vào Redis 
-                DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
+                // list = await _myShopUnitOfWork._productGenericRepository.GetAll();
+                list = await _productServicesDapper.Products_GetList();
+                 //Set lại cache vào Redis 
+                 DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(1))
                     .SetSlidingExpiration(TimeSpan.FromMinutes(3));
 
@@ -133,7 +136,7 @@ namespace BE_ASPNET_2911.Controllers
                 }
 
                 using (var stream = new MemoryStream())
-                { 14
+                { 
                     await formFile.File.CopyToAsync(stream);
 
                     using (var package = new ExcelPackage(stream))
