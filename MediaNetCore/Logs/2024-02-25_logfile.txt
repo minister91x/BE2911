@@ -1,0 +1,5 @@
+2024-02-25 21:52:17.0093 INFO 638444947366407273 | data: |{"Base64Image":"string","Sign":"string"}
+2024-02-25 21:54:26.8175 INFO 638444948665944375 | data: |{"Base64Image":"string","Sign":"string"}
+2024-02-25 21:54:26.8959 INFO 638444948665944375 | data:{"ReturnCode":-3,"ReturnMessage":"Chữ ký không hợp lệ không hợp lệ"}
+2024-02-25 21:56:25.1290 INFO 638444949849121974ManagerMediaController | data: |{"Base64Image":"string","Sign":"string"}
+2024-02-25 21:56:25.2141 INFO 638444949849121974 ManagerMediaController | data:{"ReturnCode":-3,"ReturnMessage":"Chữ ký không hợp lệ không hợp lệ"}
